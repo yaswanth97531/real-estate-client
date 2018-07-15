@@ -15,7 +15,6 @@ const handleGetDefaultImages = (state, action) => {
 };
 
 export default (state = initialState, action) => {
-  console.log("In handle get default images");
   switch (action.type) {
     case Type.GET_DEFAULT_IMAGES:
       return {

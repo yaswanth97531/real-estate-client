@@ -26,8 +26,6 @@ class Login extends Component {
 
   static getDerivedStateFromProps(props, state) {
     if (props.isUserLoggedIn) {
-      console.log("Props after login", props);
-      console.log("State after state", state);
       props.history.push("/home");
     }
   }
@@ -52,7 +50,6 @@ class Login extends Component {
   };
 
   render() {
-    console.log("In render method");
     const { classes } = this.props;
 
     const responseGoogle = response => {

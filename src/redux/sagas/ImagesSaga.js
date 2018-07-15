@@ -4,7 +4,6 @@ import * as API from "../../config/config";
 import { GetDataFromServer } from "../service";
 
 export function* fetchDefaultImages(action) {
-  console.log("In fetch default user", action);
   try {
     let formBody = {};
     const reqMethod = "GET";
@@ -15,7 +14,6 @@ export function* fetchDefaultImages(action) {
       formBody
     );
     const result = yield response.json();
-    console.log("In response function ", result);
     if (result.error) {
       yield put({
         type: Types.GET_DEFAULT_IMAGES_SERVER_RESPONSE_ERROR,
