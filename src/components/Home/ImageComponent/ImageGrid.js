@@ -20,9 +20,12 @@ const styles = {
 };
 
 function ImageGrid(props) {
-  const { classes, imageData } = props;
+  const { classes, imageData, imageClick } = props;
   return (
-    <div className={classes.imageCardContainer}>
+    <div
+      className={classes.imageCardContainer}
+      onClick={() => imageClick(imageData)}
+    >
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}

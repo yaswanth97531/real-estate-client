@@ -8,7 +8,7 @@ import Typography from "material-ui/Typography";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
 import GoogleLogin from "react-google-login";
-import FacebookLogin from "react-facebook-login";
+// import FacebookLogin from "react-facebook-login";
 
 import { loginUser, googleLogin, getDefaultImages } from "../../redux/actions";
 import Header from "../Navigation/Header";
@@ -17,7 +17,6 @@ class Login extends Component {
   constructor(props) {
     super(props);
     //defining the state to the component
-    console.log("In constructor method");
     this.state = {
       username: "",
       password: ""
@@ -90,19 +89,15 @@ class Login extends Component {
                   margin="normal"
                 />
                 <br />
-                <Button onClick={this.handleLoginButton}>Login</Button>
-                <GoogleLogin
-                  clientId="77000656723-h1ha664aluasd8tb933841696onumigc.apps.googleusercontent.com"
-                  buttonText="Login With Google"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                />
-                <FacebookLogin
-                  appId="1088597931155576"
-                  autoLoad={true}
-                  fields="name,email,picture"
-                  callback={responseFacebook}
-                />
+                <div>
+                  <Button onClick={this.handleLoginButton}>Login</Button>
+                  <GoogleLogin
+                    clientId="77000656723-h1ha664aluasd8tb933841696onumigc.apps.googleusercontent.com"
+                    buttonText="Login With Google"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                  />
+                </div>
               </form>
             </Typography>
           </Paper>

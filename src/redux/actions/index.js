@@ -29,3 +29,9 @@ export const getDefaultImages = () => {
     type: Type.GET_DEFAULT_IMAGES
   };
 };
+
+export const newPost = () => {
+  return {
+    type: Type.NEW_POST
+  };
+};

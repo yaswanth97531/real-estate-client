@@ -12,32 +12,41 @@ function Header() {
       <AppBar position="static">
         <Toolbar>
           <Typography style={styles.typography} variant="title" color="inherit">
-            Real Estate
+            <Button>
+              <Link
+                style={styles.sign}
+                to={{
+                  pathname: "/home"
+                }}
+              >
+                Real Estate
+              </Link>
+            </Button>
           </Typography>
           <Typography variant="title">
             <Button>
               <Link
                 style={styles.sign}
                 to={{
-                  pathname: "/signin"
+                  pathname: "/newPost"
                 }}
               >
-                Login
-              </Link>
-            </Button>
+                New Post{" "}
+              </Link>{" "}
+            </Button>{" "}
             <Button>
               <Link
                 style={styles.sign}
                 to={{
-                  pathname: "/signup"
+                  pathname: "/login"
                 }}
               >
-                Sign up
-              </Link>
-            </Button>
-          </Typography>
-        </Toolbar>
-      </AppBar>
+                Log Out{" "}
+              </Link>{" "}
+            </Button>{" "}
+          </Typography>{" "}
+        </Toolbar>{" "}
+      </AppBar>{" "}
     </div>
   );
 }

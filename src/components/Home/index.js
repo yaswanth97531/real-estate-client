@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { withStyles } from "@material-ui/core/styles";
 import { getDefaultImages } from "../../redux/actions";
 import ImageGrid from "./ImageComponent/ImageGrid";
+import HomeHeader from "./../Navigation/HomeHeader";
+
 class Home extends Component {
   // this is the first life cycle(LC). LC - 1
   constructor(props) {
@@ -20,8 +22,8 @@ class Home extends Component {
     this.props.dispatch(getDefaultImages());
   }
 
-  handleImageClick = e => {
-    console.log("You clicked me", e);
+  handleImageClick = imageData => {
+    console.log("You clicked me", imageData);
   };
 
   // static getDerivedStateFromProps(props) {
@@ -34,16 +36,14 @@ class Home extends Component {
     const { classes } = this.props;
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Home</h1>
-        </header>
+        <HomeHeader />
         <div className={classes.imageCardContainer}>
           {this.props.defaultImages &&
             this.props.defaultImages.resources.map(resource => (
               <ImageGrid
                 key={resource.public_id}
                 imageData={resource}
-                onClick={this.handleImageClick}
+                imageClick={this.handleImageClick}
               />
             ))}
         </div>
@@ -64,6 +64,12 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     alignItems: "flex-start"
+  },
+  appHeader: {
+    // margin: "0px"
+    padding: "1%",
+    flex: 1,
+    display: "inline-block"
   }
 });
 
