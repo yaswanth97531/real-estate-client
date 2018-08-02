@@ -50,7 +50,7 @@ class NewPost extends Component {
 
   handleNewPostButton = e => {
     console.log(this.state.propertyType, this.state);
-    this.props.dispatch(newPost(this.state.uploadedImage));
+    // this.props.dispatch(newPost(this.state.uploadedImage));
   };
   render() {
     const { classes } = this.props;
